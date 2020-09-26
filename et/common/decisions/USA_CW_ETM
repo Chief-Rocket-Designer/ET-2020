@@ -1,0 +1,32 @@
+
+ETM_USA_win_hearts_and_minds_category = {
+	win_over_wgt = {
+		available = {
+            WGR = {
+                exists = yes
+                has_government = democratic
+            }
+         }
+		
+
+		cost = 75
+        fire_only_once = no
+        days_remove = 30
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+		   add_opinion_modifier = {
+                 target = WGR
+                 modifier = large_increase
+            }     
+            WGR = {
+                add_opinion_modifier = {
+                    target = USA
+                    modifier = large_increase
+                }  
+		    }
+	}
+}
+
+}

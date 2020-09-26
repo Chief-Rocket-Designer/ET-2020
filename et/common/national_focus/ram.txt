@@ -1,0 +1,568 @@
+focus_tree = {
+	id = ram_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ram
+		}
+	}
+	
+	continuous_focus_position = { x = 50 y = 6000 }
+	default = no
+	reset_on_civilwar = no
+	
+	focus = {
+		id = RAM_War_With_USA
+		text = " Proletarian's will be Victorious "
+		icon = GFX_goal_generic_construct_mil_factory
+		
+		x = 6
+		y = 0
+		cost = 0
+
+		available_if_capitulated = no
+		
+		completion_reward = {
+			RAM = { 
+				inherit_technology = USA
+			}
+		}
+	}
+#Society Headers
+	focus = {
+		id = RAM_suspend_the_presecution
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Unite the Proletarians" 
+		prerequisite = { focus = RAM_War_With_USA }
+		x = 0
+		y = 1
+		relative_position_id = RAM_War_With_USA
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 1000
+		}
+	}
+	
+	focus = {
+		id = RAM_freedom
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Honor Notions of Liberty" 
+		prerequisite = { focus = RAM_suspend_the_presecution }
+		mutually_exclusive = { focus = RAM_oppression } 
+		x = 9
+		y = 1
+		relative_position_id = RAM_suspend_the_presecution
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 1000
+		}
+	}
+	
+	focus = {
+		id = RAM_fos
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Ensure Freedom of Speech" 
+		prerequisite = { focus = RAM_freedom }
+		x = -1
+		y = 1
+		relative_position_id = RAM_freedom
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = -25
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+		}
+	}
+	
+	focus = {
+		id = RAM_fol
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Ensure Freedom of Labour" 
+		prerequisite = { focus = RAM_freedom }
+		x = 1
+		y = 1
+		relative_position_id = RAM_freedom
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 75
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.07
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+	focus = {
+		id = RAM_oppression
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Dark Deeds" 
+		prerequisite = { focus = RAM_suspend_the_presecution }
+		mutually_exclusive = { focus = RAM_freedom }
+		x = 15
+		y = 1
+		relative_position_id = RAM_suspend_the_presecution
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 2
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 1000
+		}
+	}
+	
+	focus = {
+		id = RAM_Secret_Police
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Establish American Counter-Revolutionary Activities Board" 
+		prerequisite = { focus = RAM_oppression }
+		x = 0
+		y = 1
+		relative_position_id = RAM_oppression
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			#create_intelligence_agency = yes
+			add_stability = 0.10
+			add_political_power = 100
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.02
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.07
+			}
+		}
+	}
+
+	focus = {
+		id = RAM_labour_camps
+		icon = GFX_focus_generic_diplomatic_treaty
+		text = "Labor Camps" 
+		prerequisite = { focus = RAM_Secret_Police }
+		x = 0
+		y = 1
+		relative_position_id = RAM_Secret_Police
+		
+		cost = 10
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 100
+				state = 393
+			}
+			add_resource = {
+				type = tungsten
+				amount = 100
+				state = 393
+			}
+			add_resource = {
+				type = chromium
+				amount = 100
+				state = 393
+			}
+			add_political_power = 100
+			add_stability	= 0.20
+			add_manpower = 5000
+			add_war_support = -0.02
+			USA = { 
+				add_popularity = {
+					ideology = communism
+					popularity = -0.20
+				}
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.05
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.15
+				}
+				add_stability = 0.25
+				add_manpower = 30000
+				add_war_support = 0.20
+				add_ace = {
+					name = "Emily"
+					surname = "Fortsworth"
+					callsign = "Avenger"
+					type = fighter_genius
+					is_female = yes
+				}
+
+				add_ace = {
+					name = "Johnny"
+					surname = "Curtis"
+					callsign = "Defect"
+					type = fighter_genius
+					is_female = no
+				}
+
+				add_ace = {
+					name = "David"
+					surname = "Thomas"
+					callsign = "Viper"
+					type = fighter_genius
+					is_female = no
+				}
+
+				add_ace = {
+					name = "Steven"
+					surname = "Ryan"
+					callsign = "Sky Cheetah"
+					type = fighter_genius
+					is_female = no
+				}
+
+			}
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	focus = {
+		id = RAM_union_representation_act
+		icon = GFX_focus_usa_union_representation_act
+		text = " Force Union's Into National Union "
+		x = 0
+		y = 1
+		prerequisite = { focus = RAM_suspend_the_presecution }
+		relative_position_id = RAM_suspend_the_presecution
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = RAM_collectivize_property
+		icon = GFX_focus_rom_parties_end
+		text = " Collectivize Private Property " 
+		x = -1
+		y = 1
+		prerequisite = { focus = RAM_union_representation_act }
+		relative_position_id = RAM_union_representation_act
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = recent_collectivization
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = Urban_Center
+					level = 1
+					instant_build = no
+			
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = RAM_worker_management_act
+		icon = GFX_goal_generic_production
+		text = " Unions Manage the Means of Production " 
+		x = 2
+		y = 0
+		prerequisite = { focus = RAM_union_representation_act }
+		relative_position_id = RAM_collectivize_property
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = USA_worker_management_act
+		}
+	}
+	
+	focus = {
+		id = RAM_communal_property_act
+		icon = GFX_goal_generic_construct_civ_factory
+		text = " Pass Communal Property Act "
+		x = 0
+		y = 2
+		prerequisite = { focus = RAM_worker_management_act }
+		prerequisite = { focus = RAM_collectivize_property }
+		relative_position_id = RAM_union_representation_act
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+			
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = RAM_ussr_economic_cooperation
+		icon = GFX_soviet
+		text = "Trade Alliance With the USSR " 
+		x = 0
+		y = 1
+		prerequisite = { focus = RAM_communal_property_act }
+		relative_position_id = RAM_communal_property_act
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			not = {
+				has_war_with = SOV
+				
+			}
+		}
+		
+		bypass = {
+			SOV = {
+				OR = {
+					exists = no
+					has_war_with = USA
+					is_subject = yes
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			RAM = {
+				add_offsite_building = { type = industrial_complex level = 50 }
+				add_offsite_building = { type = arms_factory level = 20 }
+			}
+			
+			SOV = { add_to_tech_sharing_group = RAM_SOV_tech_group }
+			add_to_tech_sharing_group = RAM_SOV_tech_group
+			
+			
+		}	
+	}
+	
+	focus = {
+		id = RAM_Delcare_New_Communist_State
+		icon = GFX_goal_generic_soviet_construction
+		text = " Declare New American Communist State "
+		x = 0
+		y = 1
+		prerequisite = { focus = RAM_ussr_economic_cooperation }
+		relative_position_id = RAM_ussr_economic_cooperation
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			RAM = {
+				has_war = no
+			}
+			
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			transfer_state = every_owned_state
+		}	
+	}
+}
+	

@@ -1,0 +1,28 @@
+on_actions = {
+    on_daily = {
+        
+         effect = {
+            crash_variable_inisialisation = yes
+            steel_resource_cost_calc = yes
+            oil_resource_cost_calc = yes
+            vehicles_resource_cost_calc = yes
+            electronics_resource_cost_calc = yes
+			economic_crash_calculator = yes
+			gdp_c_calc = yes
+			gdp_effect = yes  
+        }
+
+         effect = {
+			dictatorship_stuff = yes
+        }
+
+        if = {
+            limit = {
+                is_major = yes
+            }
+            set_rule = {
+                can_create_factions = yes
+            }
+        }
+    }
+}

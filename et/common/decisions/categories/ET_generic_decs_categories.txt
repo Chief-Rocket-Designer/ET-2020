@@ -1,0 +1,30 @@
+ETM_generic_category = {
+	allowed = {
+		
+	}
+	
+	visible = {
+		always = yes
+	}
+}
+ETM_USA_win_hearts_and_minds_category = {
+	allowed = {
+		WGR= {
+			exists = yes
+			has_government = democratic
+			
+		}
+	}
+}
+
+ETM_space_exploration_category = { 
+
+	allowed = { 
+		has_country_flag = space_exploration_allowed
+	}
+	
+	visible = {
+		has_country_flag = space_exploration_allowed
+	}
+	
+}

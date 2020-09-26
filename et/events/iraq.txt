@@ -1,0 +1,300 @@
+﻿add_namespace = iraq
+
+country_event = {
+	id = iraq.1
+	title = iraq.1.t
+	desc = iraq.1.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	
+	
+	option = { 
+		name = iraq.1.a
+		ai_chance = {
+            base = 10
+        }
+		USA = {
+			country_event = { id = iraq.2 days = 2 random = 2 }
+		}
+	}
+}
+
+country_event = {
+	id = iraq.2
+	title = iraq.2.t
+	desc = iraq.2.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = iraq.2.a
+		ai_chance = {
+            base = 10
+        }
+		IRQ = { country_event = { id = iraq.3 days = 2 random = 1 } }
+	}
+
+	option = { 
+		name = iraq.2.b
+		ai_chance = {
+            base = 2
+        }
+		IRQ = { country_event = { id = iraq.4 days = 2 random = 1 } }
+	}
+	
+}
+
+country_event = {
+	#America Accepts
+	id = iraq.3
+	title = iraq.3.t
+	desc = iraq.3.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = iraq.3.a
+		ai_chance = {
+            base = 10
+        }
+	}
+	IRQ = {country_event = { id = iraq.4 days = 400 random = 20 } } 
+}
+
+country_event = {
+	#America Rejects
+	id = iraq.4
+	title = iraq.4.t
+	desc = iraq.4.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = iraq.4.a
+		ai_chance = {
+            base = 10
+        }
+	}
+	
+}
+
+country_event = {
+	id = iraq.5
+	title = iraq.5.t
+	desc = iraq.5.d
+	picture = GFX_report_event_airplane_factory
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = { # Optional : all the following will occur once the event occurs
+		
+	}
+	
+	option = { 
+		name = iraq.5.a
+		ai_chance = {
+            base = 10
+        }
+		if = {
+				limit= {
+					USA = {
+						has_government = democratic
+					}
+				}
+				USA = {
+					give_guarantee = IRQ
+					create_import = {
+						resource = oil
+						amount = 150
+						exporter = IRQ
+					}
+				}
+				add_resource = {
+					type = oil
+					amount = 375
+					state = 676
+				}
+				add_resource = {
+					type = oil
+					amount = 375
+					state = 291
+				}
+				add_resource = {
+					type = oil
+					amount = 250
+					state = 675
+				}
+
+				291 = {
+					add_extra_state_shared_building_slots = 15
+					add_building_construction = {
+						type = Urban_Center
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 7
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = fuel_silo
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				676 = {
+					add_extra_state_shared_building_slots = 10
+					add_building_construction = {
+						type = Urban_Center
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+
+			}
+			else = {
+				country_event = { id = iraq.6 days = 1}
+				USA = {
+					give_guarantee = IRQ
+					create_import = {
+						resource = oil
+						amount = 75
+						exporter = IRQ
+					}
+				}
+				add_resource = {
+					type = oil
+					amount = 150
+					state = 676
+				}
+				add_resource = {
+					type = oil
+					amount = 150
+					state = 291
+				}
+				add_resource = {
+					type = oil
+					amount = 150
+					state = 675
+				}
+
+				291 = {
+					add_extra_state_shared_building_slots = 15
+					add_building_construction = {
+						type = Urban_Center
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				676 = {
+					add_extra_state_shared_building_slots = 10
+					add_building_construction = {
+						type = Urban_Center
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 3
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = fuel_silo
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+	}
+}
+
+country_event = {
+	#poor quality
+	id = iraq.6
+	title = iraq.6.t
+	desc = iraq.6.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = { 
+		name = iraq.6.a
+		ai_chance = {
+            base = 10
+        }
+	}
+	
+}
+
+#country_event = {
+#	id = iraq.1
+#	title = iraq.1.t
+#	desc = iraq.1.d
+#	picture = GFX_report_event_generic_sign_treaty1
+#	
+#	is_triggered_only = yes
+#	fire_only_once = yes
+#	
+#	immediate = { # Optional : all the following will occur once the event occurs
+#		country_event = { id = iraq.2 days = 400 random = 50 }
+#	}
+#	
+#	option = { 
+#		name = iraq.1.a
+#		ai_chance = {
+#           base = 10
+#        }
+#	}
+#}

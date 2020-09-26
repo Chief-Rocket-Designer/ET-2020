@@ -1,0 +1,148 @@
+division_template = {
+	name = "JSDF Infantry"
+	division_names_group = JAP_INF_01
+	# Note: In 1940 the IJA reorganized infantry divisions into triangular formations
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "JSDF Motorized" 			
+	division_names_group = JAP_MOT_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "JSDP Light Armor"				# Tank Group - Groupings of tank 'regiments' (battalion-sized units)
+	division_names_group = JAP_ARM_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}	
+}
+
+
+units = {
+	division = { # "JSDF Light Armor"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Light Armor"
+		start_experience_factor = 0.7
+	}
+	division = { # "JSDF Motorized"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Motorized"
+		start_experience_factor = 0.7
+	}
+	division = { # "JSDF Motorized"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Motorized"
+		start_experience_factor = 0.7
+	}
+	
+	division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 1182 #Tokyo
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 12421 #North Islands
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 12421 #North Islands
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 9950  #South Islands
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+    division = { # "JSDF Infantry"
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 9950  #South Islands
+		division_template = "JSDF Infantry"
+		start_experience_factor = 0.7
+	}
+
+}
+
+
+

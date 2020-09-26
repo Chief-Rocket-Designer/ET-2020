@@ -1,0 +1,22 @@
+﻿add_namespace = holiday
+
+country_event = {
+	id = holiday.1
+	title = holiday.1.t
+	desc = holiday.1.d
+	picture = GFX_santa
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	
+	
+	option = { 
+		name = holiday.1.a
+		hidden_effect = {
+			add_political_power = 5
+			add_manpower = -200
+			add_stability = 0.010
+		}
+	}
+}

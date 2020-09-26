@@ -1,0 +1,23 @@
+on_actions = {
+    on_declare_war = { 
+        effect = { 
+            if = { 
+                limit = {
+                    OR = {
+                        original_tag = USA
+                        ROOT = {
+                            if = {
+                                limit = {
+                                    is_major = yes
+
+                                }
+                            has_war_with = USA        
+                            }
+                        }
+                    }
+                }
+                set_global_flag = USA_militias_check
+            }
+        }
+    }
+}
